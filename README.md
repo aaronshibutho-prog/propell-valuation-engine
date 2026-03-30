@@ -34,7 +34,6 @@ Uses projected future cash flows and discounts them back to present value.
 - Supports **FCFE-based valuation**
 - Includes **terminal growth assumptions**
 - Uses a **CAPM-style discount rate**
-- Allows different assumptions for **US and Indian stocks**
 
 ### 2. Relative / Peer Valuation
 Compares a company against similar companies in its industry using:
