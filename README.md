@@ -105,7 +105,7 @@ The model follows a broad pipeline like this:
    ```bash
    pip install pandas numpy yfinance
    ```
-   
+
 3. **Ensure all project files are in the same directory:**
    *valuator.py,*
    *yfinextractor.py,*
@@ -114,12 +114,12 @@ The model follows a broad pipeline like this:
    *industry_ticks.xlsx,*
    *industry_ticks_weighted.xlsx,*
    *industry_quality_weights.xlsx.*
-   
+
 4.**Run the main valuation script:**
-    ```bash
+    ```
     python valuator.py
     ```
-
+    
 5.**Enter the stock ticker like:**
     *NVDA,*
     *MSFT,*
