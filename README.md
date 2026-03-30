@@ -1,71 +1,89 @@
-# multi-factor-valuation-model
-Built a multi-factor stock valuation model in Python that automates intrinsic value estimation using real-time financial data. The model integrates DCF, capital structure analysis, profitability metrics, and scoring logic to produce structured buy/fair/sell signals. I have made it Tech-Savvy by using pandas and Yfinance for data structuring and extraction.
+# Multi-Factor Stock Valuation Model
 
+A Python-based stock valuation engine that combines **intrinsic valuation**, **relative valuation**, and **financial quality analysis** to estimate whether a stock appears **undervalued, fairly valued, or overvalued**.
 
-**Methodology Used**
+This project is built to go beyond a single-ratio approach by using multiple valuation methods together, including **DCF**, **peer comparison**, **profitability metrics**, **cash flow analysis**, and **balance sheet strength**, to create a more structured and realistic view of valuation.
 
--*1️ Price-to-Book (P/B) Ratio:*
-Used with the ROE context to avoid misleading signals.
+---
 
--*2️ PEG Ratio*
-Price-to-Earnings relative to growth.
+## Overview
 
--*3️ Free Cash Flow Yield:*
-FCF / Market Cap to measure value relative to cash generation.
+Valuing a stock using only one metric can be misleading. A low P/E ratio may not mean a stock is cheap, and a high P/E ratio may not always mean it is expensive. This model attempts to solve that problem by combining several methods into one framework.
 
--*4️ Return on Equity (ROE):*
-Profitability efficiency measure.
+The valuation engine:
 
--*5️ Discounted Cash Flow (DCF):*
-Revenue CAGR-based growth estimation
-CAPM for the cost of equity
-WACC for the discount rate
-Terminal value via the Gordon Growth Model
-Enterprise value adjusted to equity value
+- Extracts financial data using `yfinance`
+- Performs **non-peer valuation**
+- Performs **peer-based valuation**
+- Evaluates **quality and financial health**
+- Applies a **weighted scoring logic**
+- Produces a final classification such as:
+  - **Undervalued**
+  - **Fairly Valued**
+  - **Overvalued**
+  - **Inconclusive**
 
--*6️ Debt-to-Equity Ratio:*
-Balance sheet risk analysis.
+---
 
+## Key Features
 
-**Scoring Methodology & Weights**
+### 1. Discounted Cash Flow (DCF) Valuation
+Uses projected future cash flows and discounts them back to present value.
 
-To ensure a balanced valuation, the model assigns weights to each factor based on its reliability as a value indicator:
+- Supports **FCFE-based valuation**
+- Includes **terminal growth assumptions**
+- Uses a **CAPM-style discount rate**
+- Allows different assumptions for **US and Indian stocks**
 
-| Factor | Weight | Rationale |
-| :--- | :---: | :--- |
-| **DCF Intrinsic Value** | **35%** | The core fundamental value based on future cash flows. |
-| **Free Cash Flow Yield** | **25%** | Measures actual "cash-in-hand" relative to market cap. |
-| **PEG Ratio** | **10%** | Balances valuation with projected earnings growth. |
-| **Return on Equity (ROE)** | **10%** | Profitability efficiency check. |
-| **Price-to-Book (P/B)** | **10%** | Asset-based valuation (adjusted for sector norms). |
-| **Debt-to-Equity (D/E)** | **10%** | Risk multiplier; penalizes over-leveraged companies. |
+### 2. Relative / Peer Valuation
+Compares a company against similar companies in its industry using:
 
+- P/E Ratio
+- Forward P/E
+- PEG Ratio
+- P/B Ratio
+- EV/EBITDA
+- EV/EBIT
+- EV/Sales
+- P/FCF
 
-**How to Run This Project**
+### 3. Quality Analysis
+Evaluates the strength of the business using metrics such as:
 
--*Step 1: Clone the Repository:*
-```bash
-git clone https://github.com/aaronshibutho-prog/multi-factor-valuation-model.git
-cd multi-factor-valuation-model  
-```
-Or download the ZIP file from GitHub and extract it.
+- ROE
+- ROA
+- Operating Margin
+- Net Margin
+- Free Cash Flow Yield
+- Debt-to-Equity
+- Interest Coverage
+- Current Ratio
+- Asset quality indicators
 
--*Step 2: Install Required Libraries:*
-```bash
-pip install yfinance pandas
-```
--*Step 3: Run the Script:*
-```bash
-python valuation_model.py
-```
--*Step 4: Enter Stock Ticker:*
-For Example: NVDA, AAPL, RELIANCE.NS or HDFCBANK.NS
+### 4. Weighted Scoring System
+Instead of depending on one ratio, the model assigns weights to different metrics and produces a combined view.
 
+### 5. Industry-Aware Logic
+Different industries may require different weights and interpretation. The model is designed to support:
 
-**Disclaimer**
+- Industry-specific weights
+- Asset-intensity checks
+- Selective use of P/B for asset-heavy businesses
+- Better peer relevance
 
-This project is for educational and research purposes only.
-It does not constitute financial advice.
-All valuations are based on publicly available financial data and assumptions.
-Investors should conduct independent research before making investment decisions.
+---
+
+## How It Works
+
+The model follows a broad pipeline like this:
+
+1. **Fetch company financial data**
+2. **Clean and standardize the extracted data**
+3. **Calculate standalone valuation metrics**
+4. **Identify peer companies**
+5. **Compare valuation ratios against peer medians**
+6. **Evaluate business quality**
+7. **Apply weighted scoring**
+8. **Generate final classification**
+
 
