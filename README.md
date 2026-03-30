@@ -114,17 +114,11 @@ The model follows a broad pipeline like this:
    *industry_ticks.xlsx,*
    *industry_ticks_weighted.xlsx,*
    *industry_quality_weights.xlsx.*
-
-  4.**Run the main valuation script:**
+   and finally, run the main valuation script 
     ```
     python valuator.py
     ```
-    
-  5.**Enter the stock ticker like:**
-    *NVDA,*
-    *MSFT,*
-    *AAPL,*
-    *TSM.*
+
     
 ---
 
