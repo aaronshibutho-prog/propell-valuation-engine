@@ -97,12 +97,14 @@ The model follows a broad pipeline like this:
    ```bash
    git clone https://github.com/aaronshibutho-prog/propell-valuation-engine.git
    cd propell-valuation-engine
+   ```
    or
    Download the project files directly from the repository and keep them in the same folder.
    
 2. **Install the required dependencies manually:**
    ```bash
    pip install pandas numpy yfinance
+   ```
    
 3. **Ensure all project files are in the same directory:**
    *valuator.py,*
@@ -111,17 +113,18 @@ The model follows a broad pipeline like this:
    *peer_accelerator.py,*
    *industry_ticks.xlsx,*
    *industry_ticks_weighted.xlsx,*
-   *industry_quality_weights.xlsx,*
+   *industry_quality_weights.xlsx.*
    
 4.**Run the main valuation script:**
     ```bash
-   python valuator.py
+    python valuator.py
+    ```
 
 5.**Enter the stock ticker like:**
-    *NVDA*
-    *MSFT*
-    *AAPL*
-    *TSM*
+    *NVDA,*
+    *MSFT,*
+    *AAPL,*
+    *TSM.*
     
 ---
 
