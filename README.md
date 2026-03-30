@@ -1,7 +1,7 @@
 # 🚀 Propell
 ### Equity Valuation Engine
 
-**A Python-based multi-factor stock valuation system that combines intrinsic valuation, peer comparison, financial quality analysis, and weighted scoring to classify stocks as undervalued, fairly valued, or overvalued.**
+**A Python-based multi-factor stock valuation system that combines intrinsic valuation, peer comparison, financial quality analysis, and weighted scoring to classify US stocks as undervalued, fairly valued, or overvalued.**
 
 This project is built to go beyond a single-ratio approach by using multiple valuation methods together, including **DCF**, **peer comparison**, **profitability metrics**, **cash flow analysis**, and **balance sheet strength**, to create a more structured and realistic view of valuation.
 
@@ -9,7 +9,7 @@ This project is built to go beyond a single-ratio approach by using multiple val
 
 ## Overview
 
-Valuing a stock using only one metric can be misleading. A low P/E ratio may not mean a stock is cheap, and a high P/E ratio may not always mean it is expensive. This model attempts to solve that problem by combining several methods into one framework.
+Valuing US stocks using only one metric can be misleading. A low P/E ratio may not mean a stock is cheap, and a high P/E ratio may not always mean it is expensive. This model attempts to solve that problem by combining several methods into one framework.
 
 The valuation engine:
 
