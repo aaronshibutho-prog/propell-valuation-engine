@@ -113,7 +113,7 @@ The model follows a broad pipeline like this:
    *peer_accelerator.py,*
    *industry_ticks.xlsx,*
    *industry_ticks_weighted.xlsx,*
-   *industry_quality_weights.xlsx.*
+   *industry_quality_weights.xlsx,*
    and finally, run the main valuation script 
     ```
     python valuator.py
